@@ -89,10 +89,10 @@ public class PlayerWeaponsManager : MonoBehaviour
         m_InputHandler = GetComponent<PlayerInputHandler>();
         DebugUtility.HandleErrorIfNullGetComponent<PlayerInputHandler, PlayerWeaponsManager>(m_InputHandler, this, gameObject);
 
-        //m_PlayerCharacterController = GetComponent<PlayerCharacterController>();
-        //DebugUtility.HandleErrorIfNullGetComponent<PlayerCharacterController, PlayerWeaponsManager>(m_PlayerCharacterController, this, gameObject);
+        // m_PlayerCharacterController = GetComponent<PlayerCharacterController>();
+        // DebugUtility.HandleErrorIfNullGetComponent<PlayerCharacterController, PlayerWeaponsManager>(m_PlayerCharacterController, this, gameObject);
 
-        SetFOV(defaultFOV);
+        if(playerCamera) SetFOV(defaultFOV);
 
         onSwitchedToWeapon += OnWeaponSwitched;
 

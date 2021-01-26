@@ -28,7 +28,7 @@ public class AudioUtility
         source.minDistance = rolloffDistanceMin;
         source.Play();
 
-        source.outputAudioMixerGroup = GetAudioGroup(audioGroup);
+        // source.outputAudioMixerGroup = GetAudioGroup(audioGroup);
 
         TimedSelfDestruct timedSelfDestruct = impactSFXInstance.AddComponent<TimedSelfDestruct>();
         timedSelfDestruct.lifeTime = clip.length;

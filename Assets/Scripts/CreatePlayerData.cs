@@ -27,9 +27,20 @@ public class CreatePlayerData : MonoBehaviour
             return;
         }
 
-        CreateMesh(playerNumber);
+        var go = CreateMesh(playerNumber);
         SetLayer(playerNumber);
+        SetWeaponCamera(go);
     }
+
+    private void SetWeaponCamera(GameObject go)
+    {
+        var weaponsManager = go.GetComponent<PlayerWeaponsManager>();
+        if (!weaponsManager) return;
+
+        weaponsManager.playerCamera = cam;
+        weaponsManager.weaponCamera = cam;
+    }
+
     public bool CheckPlayerNumber(int number, int max)
     {
         return number < 1 || number > max;
@@ -49,15 +60,17 @@ public class CreatePlayerData : MonoBehaviour
         cam.cullingMask = cam.cullingMask - (1 << layer);
     }
 
-    public void CreateMesh(int number)
+    public GameObject CreateMesh(int number)
     {
         if (CheckPlayerNumber(number, maxPlayers))
         {
             Debug.LogError("playerNumber is too large! Please set to between 1 and " + maxPlayers);
-            return;
+            return null;
         }
         var player = meshPrefabs[number - 1];
+        
         var meshGo = Instantiate(player.prefab, meshParent);
         if (player.isBlenderMesh) meshGo.transform.rotation = Quaternion.Euler(0, 90, 0);
+        return meshGo;
     }
 }
