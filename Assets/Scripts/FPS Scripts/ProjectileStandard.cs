@@ -83,7 +83,7 @@ public class ProjectileStandard : MonoBehaviour
         {
             m_HasTrajectoryOverride = true;
 
-            Vector3 cameraToMuzzle = (m_ProjectileBase.initialPosition - playerWeaponsManager.weaponCamera.transform.position);
+            Vector3 cameraToMuzzle = m_ProjectileBase.initialPosition - playerWeaponsManager.weaponCamera.transform.position;
 
             m_TrajectoryCorrectionVector = Vector3.ProjectOnPlane(-cameraToMuzzle, playerWeaponsManager.weaponCamera.transform.forward);
             if (trajectoryCorrectionDistance == 0)

@@ -97,13 +97,14 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (CanProcessInput())
         {
-            bool isGamepad = Input.GetAxis(GameConstants.k_ButtonNameGamepadFire) != 0f;
+
+            bool isGamepad = false; // Input.GetAxis(GameConstants.k_ButtonNameGamepadFire) != 0f;
             if (isGamepad)
             {
                 return Input.GetAxis(GameConstants.k_ButtonNameGamepadFire) >= triggerAxisThreshold;
             }
             else
-            {
+            { 
                 return Input.GetButton(GameConstants.k_ButtonNameFire);
             }
         }
@@ -115,7 +116,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (CanProcessInput())
         {
-            bool isGamepad = Input.GetAxis(GameConstants.k_ButtonNameGamepadAim) != 0f;
+            bool isGamepad = false; // Input.GetAxis(GameConstants.k_ButtonNameGamepadAim) != 0f;
             bool i = isGamepad ? (Input.GetAxis(GameConstants.k_ButtonNameGamepadAim) > 0f) : Input.GetButton(GameConstants.k_ButtonNameAim);
             return i;
         }
@@ -158,7 +159,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (CanProcessInput())
         {
 
-            bool isGamepad = Input.GetAxis(GameConstants.k_ButtonNameGamepadSwitchWeapon) != 0f;
+            bool isGamepad = false; //Input.GetAxis(GameConstants.k_ButtonNameGamepadSwitchWeapon) != 0f;
             string axisName = isGamepad ? GameConstants.k_ButtonNameGamepadSwitchWeapon : GameConstants.k_ButtonNameSwitchWeapon;
 
             if (Input.GetAxis(axisName) > 0f)

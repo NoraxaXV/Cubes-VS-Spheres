@@ -172,17 +172,12 @@ public class WeaponController : MonoBehaviour
                 float chargeLeft = 1f - currentCharge;
 
                 // Calculate how much charge ratio to add this frame
-                float chargeAdded = 0f;
-                if (maxChargeDuration <= 0f)
-                {
-                    chargeAdded = chargeLeft;
-                }
-                chargeAdded = (1f / maxChargeDuration) * Time.deltaTime;
+                float chargeAdded = 1f / maxChargeDuration * Time.deltaTime;
                 chargeAdded = Mathf.Clamp(chargeAdded, 0f, chargeLeft);
 
                 // See if we can actually add this charge
                 float ammoThisChargeWouldRequire = chargeAdded * ammoUsageRateWhileCharging;
-                //if (ammoThisChargeWouldRequire <= m_CurrentAmmo)
+                if (ammoThisChargeWouldRequire <= m_CurrentAmmo)
                 {
                     // Use ammo based on charge added
                     UseAmmo(Mathf.Round(ammoThisChargeWouldRequire));
@@ -248,8 +243,7 @@ public class WeaponController : MonoBehaviour
 
     bool TryShoot()
     {
-        if (m_CurrentAmmo >= 1f
-            && m_LastTimeShot + delayBetweenShots < Time.time)
+        if (m_CurrentAmmo >= 1f && m_LastTimeShot + delayBetweenShots < Time.time)
         {
             HandleShoot();
             m_CurrentAmmo -= 1;

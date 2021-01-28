@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 3489050986948097641}
   - component: {fileID: 3594574774078192949}
   - component: {fileID: 2544134834390980633}
+  - component: {fileID: 3380385398409430639}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -148,11 +149,31 @@ MonoBehaviour:
   impactSFXClip: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   hittableLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
-  speed: 20
+    m_Bits: 9270
+  speed: 100
   gravityDownAcceleration: 0
-  trajectoryCorrectionDistance: -1
-  inheritWeaponVelocity: 1
+  trajectoryCorrectionDistance: 1
+  inheritWeaponVelocity: 0
   damage: 40
-  areaOfDamage: {fileID: 0}
+  areaOfDamage: {fileID: 3380385398409430639}
   radiusColor: {r: 0, g: 0.2, b: 0.2, a: 0.2}
+--- !u!114 &3380385398409430639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155750269067328356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0244d6b9e98532469c7be0732490a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaOfEffectDistance: 0.75
+  damageRatioOverDistance:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  areaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
