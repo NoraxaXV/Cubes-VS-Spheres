@@ -442,6 +442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPlayers: 2
   playerNumber: 1
+  startingLayerNumber: 14
+  playerCamCullingMasks:
+  - serializedVersion: 2
+    m_Bits: 244791
+  - serializedVersion: 2
+    m_Bits: 228407
   prefabs:
   - {fileID: 2776958911216529897, guid: 05d01f36821bf9a45a430449969bb9fa, type: 3}
   - {fileID: 1895538839450096897, guid: 2dfa974635ebcde4e9f87533c3f0b0f2, type: 3}
