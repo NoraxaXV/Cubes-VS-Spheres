@@ -102,11 +102,11 @@ public class PlayerCharacterController : MonoBehaviour
         }
     }
         
-    Health m_Health;
+    // Health m_Health;
     PlayerInputHandler m_InputHandler;
     CharacterController m_Controller;
     PlayerWeaponsManager m_WeaponsManager;
-    Actor m_Actor;
+    // Actor m_Actor;
     Vector3 m_GroundNormal;
     Vector3 m_CharacterVelocity;
     Vector3 m_LatestImpactSpeed;
@@ -130,15 +130,15 @@ public class PlayerCharacterController : MonoBehaviour
         m_WeaponsManager = GetComponent<PlayerWeaponsManager>();
         DebugUtility.HandleErrorIfNullGetComponent<PlayerWeaponsManager, PlayerCharacterController>(m_WeaponsManager, this, gameObject);
 
-        m_Health = GetComponent<Health>();
-        DebugUtility.HandleErrorIfNullGetComponent<Health, PlayerCharacterController>(m_Health, this, gameObject);
+        // m_Health = GetComponent<Health>();
+        // DebugUtility.HandleErrorIfNullGetComponent<Health, PlayerCharacterController>(m_Health, this, gameObject);
 
-        m_Actor = GetComponent<Actor>();
-        DebugUtility.HandleErrorIfNullGetComponent<Actor, PlayerCharacterController>(m_Actor, this, gameObject);
+        // m_Actor = GetComponent<Actor>();
+        // DebugUtility.HandleErrorIfNullGetComponent<Actor, PlayerCharacterController>(m_Actor, this, gameObject);
 
         m_Controller.enableOverlapRecovery = true;
 
-        m_Health.onDie += OnDie;
+        // m_Health.onDie += OnDie;
 
         // force the crouch state to false when starting
         SetCrouchingState(false, true);
@@ -150,7 +150,7 @@ public class PlayerCharacterController : MonoBehaviour
         // check for Y kill
         if(!isDead && transform.position.y < killHeight)
         {
-            m_Health.Kill();
+            // m_Health.Kill();
         }
 
         hasJumpedThisFrame = false;
@@ -167,7 +167,7 @@ public class PlayerCharacterController : MonoBehaviour
             if (recievesFallDamage && fallSpeedRatio > 0f)
             {
                 float dmgFromFall = Mathf.Lerp(fallDamageAtMinSpeed, fallDamageAtMaxSpeed, fallSpeedRatio);
-                m_Health.TakeDamage(dmgFromFall, null);
+                // m_Health.TakeDamage(dmgFromFall, null);
 
                 // fall damage SFX
                 audioSource.PlayOneShot(fallDamageSFX);
@@ -381,7 +381,7 @@ public class PlayerCharacterController : MonoBehaviour
             m_Controller.height = m_TargetCharacterHeight;
             m_Controller.center = Vector3.up * m_Controller.height * 0.5f;
             playerCamera.transform.localPosition = Vector3.up * m_TargetCharacterHeight * cameraHeightRatio;
-            m_Actor.aimPoint.transform.localPosition = m_Controller.center;
+            // m_Actor.aimPoint.transform.localPosition = m_Controller.center;
         }
         // Update smooth height
         else if (m_Controller.height != m_TargetCharacterHeight)
@@ -390,7 +390,7 @@ public class PlayerCharacterController : MonoBehaviour
             m_Controller.height = Mathf.Lerp(m_Controller.height, m_TargetCharacterHeight, crouchingSharpness * Time.deltaTime);
             m_Controller.center = Vector3.up * m_Controller.height * 0.5f;
             playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, Vector3.up * m_TargetCharacterHeight * cameraHeightRatio, crouchingSharpness * Time.deltaTime);
-            m_Actor.aimPoint.transform.localPosition = m_Controller.center;
+            // m_Actor.aimPoint.transform.localPosition = m_Controller.center;
         }
     }
 
