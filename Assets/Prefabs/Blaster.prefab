@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2476531646345253010}
   - component: {fileID: 363421300625946241}
-  - component: {fileID: 3553241368031774118}
   m_Layer: 11
   m_Name: Blaster
   m_TagString: Untagged
@@ -235,50 +234,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3553241368031774118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8543471976473670289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad90ba0b1477764da373f5ec01a8cb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponName: Blaster
-  weaponIcon: {fileID: 21300000, guid: faf4d5b93f9a38e43ba62643b29c7249, type: 3}
-  crosshairDataDefault:
-    crosshairSprite: {fileID: 21300000, guid: 5485e2f56028a3c4cb54f5caa167377e, type: 3}
-    crosshairSize: 1
-    crosshairColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-  crosshairDataTargetInSight:
-    crosshairSprite: {fileID: 21300000, guid: 5485e2f56028a3c4cb54f5caa167377e, type: 3}
-    crosshairSize: 1
-    crosshairColor: {r: 1, g: 0, b: 0, a: 0}
-  weaponRoot: {fileID: 3549116370755162626}
-  weaponMuzzle: {fileID: 7052198846714917373}
-  shootType: 1
-  projectilePrefab: {fileID: 3594574774078192949, guid: c346323713a1ef04a9c3a61708269d3f, type: 3}
-  delayBetweenShots: 0.1
-  bulletSpreadAngle: 30
-  bulletsPerShot: 2
-  recoilForce: 0.446
-  aimZoomRatio: 1
-  aimOffset: {x: 0, y: 0, z: 0}
-  ammoReloadRate: 100
-  ammoReloadDelay: 0
-  maxAmmo: 100
-  maxChargeDuration: 2
-  ammoUsedOnStartCharge: 1
-  ammoUsageRateWhileCharging: 1
-  muzzleFlashPrefab: {fileID: 0}
-  shootSFX: {fileID: 0}
-  changeWeaponSFX: {fileID: 0}
-  canRecharge: 1
-  m_CurrentAmmo: 0
-  canShoot: 1
 --- !u!1001 &4431989916371496787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,11 +307,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f17a6bc0867bdd648ac4ed5eb4c5a455, type: 3}
---- !u!1 &3549116370755162626 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f17a6bc0867bdd648ac4ed5eb4c5a455, type: 3}
-  m_PrefabInstance: {fileID: 4431989916371496787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4182487418006587576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f17a6bc0867bdd648ac4ed5eb4c5a455, type: 3}
